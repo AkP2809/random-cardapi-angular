@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-body text-center">
+        <img [src]="user.picture?.large" alt="UserThumbnail" 
+        width="150" height="150"
+        class="rounded-circle img-thumbnail border-danger"
+        />
+
+        <div class="card-title text-primary">
+            <h1>{{user.name?.title + '. ' + user.name?.first + ' ' + user.name?.last}}</h1>
+        </div>
+
+        <div class="card-text">
+            <fa-icon [icon]="faEnvelope"></fa-icon> {{user.email}}
+        </div>
+        <div class="card-text">
+            <fa-icon [icon]="faMapMarkedAlt"></fa-icon> {{user.location?.street?.number + ', ' + user.location?.street?.name + ', ' + user.location?.city + ', ' + user.location?.state}}
+        </div>
+        <div class="card-text">
+            <fa-icon [icon]="faPhone"></fa-icon> {{user.phone + ' / ' + user.cell}}
+        </div>
+        <div class="card-text">
+            <fa-icon [icon]="faDatabase"></fa-icon> {{'Registered on ' + (user.registered?.date | date)}}
+        </div>
+    </div>
+</div>
